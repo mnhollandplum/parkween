@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('Denver.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  color: white;
+  background-color: black;
+  text-align: center;
+
+}
+
+nav {
+  background-color: black;
+  opacity: 0.5;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: tomato;
+}
+
+.nav-item {
+  text-align: left;
+}
