@@ -42,6 +42,7 @@ group :development, :test do
   gem 'pry'
   gem 'figaro'
   gem 'faraday'
+  gem 'launchy'
 end
 
 group :test do
