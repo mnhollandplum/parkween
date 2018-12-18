@@ -40,6 +40,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'simplecov'
   gem 'pry'
+  gem 'figaro'
+  gem 'faraday'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 group :development do
