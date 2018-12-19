@@ -1,6 +1,15 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'pry'
+require 'simplecov'
+
+SimpleCov.start "rails" do
+  add_filter 'app/channels/application_cable/channel.rb'
+  add_filter 'app/channels/application_cable/connection.rb'
+  add_filter 'app/jobs/application_job.rb'
+  add_filter 'app/mailers/application_mailer.rb'
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
@@ -75,3 +84,22 @@ end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
+
+def stub_omniauth
+    # first, set OmniAuth to run in test mode
+    OmniAuth.config.test_mode = true
+    # then, provide a set of fake oauth data that
+    # omniauth will use when a user tries to authenticate:
+    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new(auth = {
+      provider: "google",
+      uid: "12345678910",
+      info: {
+        email: "nikki@holland.com",
+        first_name: "nikki",
+        last_name: "holland",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        expires_at: DateTime.now,
+      }
+    })
+  end
