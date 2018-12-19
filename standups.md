@@ -1,6 +1,6 @@
 12/19/2018
 
-What did you complete yesterday?
+# What did you complete yesterday?
 
 Maria 
   - About page, wrote some user stories.
@@ -14,7 +14,7 @@ Nikki
 Preston
   - Nav bar, links, and styling (paired with Nick).
 
-What are you going to work on today?
+# What are you going to work on today?
 
 Maria 
   - CI setup research
@@ -30,7 +30,7 @@ Nikki
 Preston 
   - CI setup research
 
-Group Goals Today 
+# Group Goals Today 
 - Spike on static/js map
 
 Is there anything blocking you?
