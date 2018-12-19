@@ -1,11 +1,8 @@
-<h1>Welcome to ParKween<h1>
-
-
-<h4>Your Everyday Parking Companion<h4>
-
+<div class="hello">
+  <h1 class="welcome">Welcome to ParKween<h1>
+  <h4 class="slogan">Your Everyday Parking Companion<h4>
+</div>
 
 <% if !current_user %>
 <a class="btn btn-primary btn-lg btn-block" id="root-login-btn" href="/login" role="button">Login</a>
-<% else %>
-<a class="btn btn-primary btn-lg btn-block" id="root-logout-btn" href="/logout" role="button">Logout</a>
 <%end%>
