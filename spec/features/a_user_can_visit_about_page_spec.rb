@@ -2,6 +2,7 @@ require 'rails_helper'
 describe 'as a user' do
   it 'displays an about page'do
     visit '/'
+    
     click_on 'About'
 
     expect(current_path).to eq(about_path)
