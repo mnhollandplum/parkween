@@ -19,4 +19,6 @@ script:
   - whereis google-chrome-stable
   - whereis chromedriver
 
-  
+before_install:
+  - gem install selenium-webdriver
+  - gem install rake

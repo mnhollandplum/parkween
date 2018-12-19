@@ -56,7 +56,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'simplecov'
-  gem 'rake', '~>12.3.1'
 end
 
 group :development do
