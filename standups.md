@@ -1,40 +1,45 @@
-12/19/2018
-
 # What did you complete yesterday?
 
 Maria 
-  - About page, wrote some user stories.
+  - 12/19/2018 
+    - About page, wrote some user stories.
   
 Nick 
-  - Nav bar, links, and styling (paired with Preston).
+  - 12/19/2018 
+    - Nav bar, links, and styling (paired with Preston).
   
 Nikki 
-  - OAuth, login/logout paths.
+  - 12/19/2018 
+    - OAuth, login/logout paths.
   
 Preston
-  - Nav bar, links, and styling (paired with Nick).
+  - 12/19/2018 
+    - Nav bar, links, and styling (paired with Nick).
 
 # What are you going to work on today?
 
 Maria 
-  - CI setup research
-  - Dive into google maps api.
+  -12/19/2018
+    - CI setup research
+    - Dive into google maps api.
   
 Nick 
-  - CI setup research.
+  - 12/19/2018
+    - CI setup research.
   
 Nikki 
-  - Deploy to Heroku.  
-  - Dive into google maps api.
+  - 12/19/2018
+    - Deploy to Heroku.  
+    - Dive into google maps api.
   
 Preston 
-  - CI setup research
+  - 12/19/2018
+    - CI setup research
 
-# Group Goals Today 
-- Spike on static/js map
+ Group Goals Today 
+  - 12/19/2018
+   - Spike on static/js map
 
-Is there anything blocking you?
-
-Group is going to spike on static vs js map for our results page.  
-
-
+# Is there anything blocking you?
+  - 12/19/2018
+    - Group is going to spike on static vs js map for our results page.  
