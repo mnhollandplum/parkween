@@ -3,4 +3,9 @@
 
 <h4>Your Everyday Parking Companion<h4>
 
+
+<% if !current_user %>
 <a class="btn btn-primary" href="/login" role="button">Login</a>
+<% else %>
+<a class="btn btn-primary" href="/logout" role="button">Logout</a>
+<%end%>
