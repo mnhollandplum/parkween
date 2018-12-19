@@ -20,11 +20,14 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <% if current_user %>
-          <a class="nav-item nav-link active" <%= link_to "New Trip", new_trip_path %><span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link active" <%= link_to "Trips", trips_path %><span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link active" <%= link_to "Logout", logout_path, method: :delete %><span class="sr-only">(current)</span></a>
+          <a class="btn btn-primary btn-lg btn-block nav-item" <%= link_to "New Trip", new_trip_path %><span class="sr-only">(current)</span></a>
+          <a class="btn btn-primary btn-lg btn-block nav-item" <%= link_to "Trips", trips_path %><span class="sr-only">(current)</span></a>
         <% end %>
-        <a class="nav-item nav-link active" href="/about">About <span class="sr-only">(current)</span></a>
+          <a class="btn btn-primary btn-lg btn-block nav-item" href="/about">About <span class="sr-only">(current)</span></a>
+
+        <% if current_user %>
+           <a class="btn btn-danger btn-lg btn-block nav-item" <%= link_to "Logout", logout_path, method: :delete %><span class="sr-only">(current)</span></a>
+        <% end %>
       </div>
     </div>
   </nav>
