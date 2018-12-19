@@ -43,6 +43,9 @@ group :development, :test do
   gem 'figaro'
   gem 'faraday'
   gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :test do
