@@ -38,7 +38,7 @@ Preston
 
  Group Goals Today 
   - 12/19/2018
-   - Spike on static/js map
+    - Spike on static/js map
 
 # Is there anything blocking you?
   - 12/19/2018
