@@ -5,3 +5,4 @@ services:
   - postgresql
 before_script:
   - bundle exec rake db:{drop,create,migrate,seed}
+  - bundle exec rake
