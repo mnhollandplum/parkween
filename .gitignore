@@ -30,3 +30,4 @@
 /config/application.yml
 
 .rspec
+/coverage

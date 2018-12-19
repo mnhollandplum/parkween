@@ -53,6 +53,9 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'simplecov'
 end
 
 group :development do
