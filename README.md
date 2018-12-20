@@ -1,6 +1,7 @@
 ### ParKween
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/mnhollandplum/parkween.svg?columns=all)](https://waffle.io/mnhollandplum/parkween)
+[![Build Status](https://travis-ci.org/mnhollandplum/parkween.svg?branch=master)](https://travis-ci.org/mnhollandplum/parkween)
 
 ### Pitch
 

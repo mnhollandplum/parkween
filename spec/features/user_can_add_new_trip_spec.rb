@@ -8,6 +8,5 @@ RSpec.describe 'As a user' do
     fill_in :start_location, with: '123 Main Street'
     fill_in :end_location, with: '321 Main Street'
 
-    fill_in(:radius) with(1)
   end
 end
