@@ -1,5 +1,7 @@
 ### ParKween
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/mnhollandplum/parkween.svg?columns=all)](https://waffle.io/mnhollandplum/parkween)
+
 ### Pitch
 
 Have you ever wanted to have access to more information about where to park for your daily adventure to work?  Look no further, PARKWEEN is the app for you! Type in the address of your final destination and PARKWEEN(tm) will give you parking options within a chosen radius of your final destination.  
