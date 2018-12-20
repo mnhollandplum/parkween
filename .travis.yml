@@ -5,6 +5,3 @@ services:
   - postgresql
 before_script:
   - bundle exec rake db:{drop,create,migrate,seed}
-sudo: required
-addons:
-chrome: stable
