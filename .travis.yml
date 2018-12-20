@@ -5,5 +5,3 @@ services:
   - postgresql
 before_script:
   - bundle exec rake db:{drop,create,migrate,seed}
-before_install:
-  - gem install selenium-webdriver
