@@ -2,6 +2,7 @@ class GoogleCoordinateService
 
   def get_geolocation_coordinates
     get_json("/geolocation/v1/geolocate?")[:location]
+    #this will return the value of location{:lat => x, :lng=>x}
   end
   private
   def conn
