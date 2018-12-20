@@ -99,16 +99,22 @@ def stub_omniauth
     OmniAuth.config.test_mode = true
     # then, provide a set of fake oauth data that
     # omniauth will use when a user tries to authenticate:
-    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new(auth = {
-      provider: "google",
-      uid: "12345678910",
-      info: {
-        email: "nikki@holland.com",
-        first_name: "nikki",
-        last_name: "holland",
-        token: "abcdefg12345",
-        refresh_token: "12345abcdefg",
-        expires_at: DateTime.now,
+    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new(auth = {"provider"=>"google_oauth2",
+ "uid"=>"12345678910",
+ "info"=>
+  {"name"=>"Nikki Holland-Plum",
+   "email"=>"nikki@holland.com",
+   "first_name"=>"nikki",
+   "last_name"=>"holland",
+   "image"=>
+    "https://lh6.googleusercontent.com/-LM9r2p-BwZQ/AAAAAAAAAAI/AAAAAAAAqbM/TJcR5bHYDgg/photo.jpg",
+   "urls"=>{"google"=>"https://plus.google.com/117440410040433725233"}},
+ "credentials"=>
+  {"token"=>
+    "abcdefg12345",
+   "refresh_token"=>"12345abcdefg",
+   "expires_at"=>1545261006,
+   "expires"=>true,
       }
     })
   end

@@ -23,6 +23,5 @@ RSpec.describe User, type: :model do
     expect(new_user.first_name).to eq("nikki")
     expect(new_user.last_name).to eq("holland")
     expect(new_user.token).to eq("abcdefg12345")
-    expect(new_user.refresh_token).to eq("12345abcdefg")
   end
 end
