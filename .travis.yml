@@ -20,5 +20,6 @@ script:
   - whereis chromedriver
 
 before_install:
+  - gem install bundler
   - gem install selenium-webdriver
   - gem install rake
