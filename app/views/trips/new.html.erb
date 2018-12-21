@@ -1,2 +1,34 @@
+<div class= "form-background">
+  <%= form_tag('/trips', controller: "trips", action: "new") do %>
+    <div class="tab">
+      Destination<br> <%= text_field_tag 'destination' %>
+
+      <br>
+      Radius<br> <%= text_field_tag 'radius' %>
+      <br>
+
+      <div class=form-item>
+      Parking Type<br>
+
+      <span class="parking-option">
+        Meter<br>
+        <label class="switch">
+          <%= check_box_tag 'meter', class: 'checkbox' %>
+          <span class="slider"></span>
+        </label>
+        <br>
+      </span>
+
+      <span class="parking-option">
+        Lot<br>
+        <label class="switch">
+          <%= check_box_tag 'lot', class: 'checkbox' %>
+          <span class="slider"></span>
+        </label>
+      </span>
+      </div>
+      <%= submit_tag "Search", class: "submit-btn btn btn-primary btn-lg btn-block mx-auto", style: "width: 760px" %>
+  <% end %>
+</div>
 <button onclick="getLocation()">Current Location</button>
 <p id="location"></p>
