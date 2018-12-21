@@ -1,5 +1,5 @@
 <div class= "form-background">
-  <%= form_tag('/trips') do %>
+  <%= form_tag('/trips', controller: "trips", action: "new") do %>
     <div class="tab">
       Destination<br> <%= text_field_tag 'destination' %>
 
