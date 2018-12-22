@@ -79,6 +79,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data("<GOOGLE_API_KEY>") { ENV['GOOGLE_API_KEY'] }
+  config.filter_sensitive_data("<PARKWHIZ_API_KEY>") { ENV['PARKWHIZ_API_KEY'] }
 end
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
