@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2018_12_19_005146) do
   enable_extension "plpgsql"
 
   create_table "trips", force: :cascade do |t|
-    t.string "start_location"
-    t.string "end_location"
+    t.string "final_address"
+    t.string "chosen_spot"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
