@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 20 Dec 2018 19:11:44 GMT
+      - Sat, 22 Dec 2018 22:05:59 GMT
       Expires:
-      - Fri, 21 Dec 2018 19:11:44 GMT
+      - Sun, 23 Dec 2018 22:05:59 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -39,7 +39,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=437
+      - gfet4t7; dur=31
       Alt-Svc:
       - quic=":443"; ma=2592000; v="44,43,39,35"
     body:
@@ -125,5 +125,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Thu, 20 Dec 2018 19:11:44 GMT
+  recorded_at: Sat, 22 Dec 2018 22:05:59 GMT
 recorded_with: VCR 4.0.0

@@ -10,7 +10,8 @@ describe GoogleGeolocationService do
   it 'returns coordinates' do
     VCR.use_cassette("google_geolocation_service") do
       service = GoogleGeolocationService.new
-      expect(service.get_geolocation_coordinates).to eq({:lat => 39.751202899999996, :lng => -105.00199309999999})
+      expect(service.get_geolocation_coordinates[:lat].class).to be(Float)
+      expect(service.get_geolocation_coordinates[:lng].class).to be(Float)
     end
   end
 end
