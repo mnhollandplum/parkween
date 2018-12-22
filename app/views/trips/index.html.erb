@@ -5,15 +5,15 @@
       var map;
       function initMap() {
         var locations = [
-     ['Turing', 39.751199899999996, -105.00201589999999, 4],
-     ['Union Station', 39.752929, -104.999883, 5],
-     ['Brothers', 39.752930, -104.993978, 3],
-     ['City Park', 39.746601, -104.956993, 2],
-     ['Denver International Airport', 39.856824, -104.674705, 1]
+     ['Turing', 39.751199899999996, -105.00201589999999],
+     ['Union Station', 39.752929, -104.999883],
+     ['Brothers', 39.752930, -104.993978],
+     ['City Park', 39.746601, -104.956993],
+     ['Denver International Airport', 39.856824, -104.674705]
    ];
 
    var map = new google.maps.Map(document.getElementById('map'), {
-     zoom: 10,
+     zoom: 15,
      center: new google.maps.LatLng(39.751199899999996, -105.00201589999999),
      mapTypeId: google.maps.MapTypeId.ROADMAP
    });
@@ -27,8 +27,7 @@
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
        map: map,
        draggable: true,
-       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-
+       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
