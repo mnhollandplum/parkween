@@ -4,14 +4,49 @@
     <script>
       var map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 39.751199899999996, lng:  -105.00201589999999},
-          zoom: 16
-        });
-        var turing = {lat: 39.751199899999996, lng:  -105.00201589999999};
-        var marker = new google.maps.Marker({position: turing, map: map});
-      }
-    </script>
+        var locations = [
+     ['Turing', 39.751199899999996, -105.00201589999999, 4],
+     ['Union Station', 39.752929, -104.999883, 5],
+     ['Brothers', 39.752930, -104.993978, 3],
+     ['City Park', 39.746601, -104.956993, 2],
+     ['Denver International Airport', 39.856824, -104.674705, 1]
+   ];
+
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 10,
+     center: new google.maps.LatLng(39.751199899999996, -105.00201589999999),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+   });
+
+   var infowindow = new google.maps.InfoWindow();
+
+   var marker, i;
+
+   for (i = 0; i < locations.length; i++) {
+     marker = new google.maps.Marker({
+       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+       map: map
+     });
+
+     google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       return function() {
+         infowindow.setContent(locations[i][0]);
+         infowindow.open(map, marker);
+       }
+     })(marker, i));
+   }
+}
+
+function loadScript() {
+ var script = document.createElement('script');
+ script.type = 'text/javascript';
+ script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+     'callback=initialize';
+ document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+ </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap">
   </script>
