@@ -5,6 +5,7 @@ class ParkwhizResultsService
   end
 
   private
+  
   def conn
     Faraday.new(url:"https://api.parkwhiz.com") do |faraday|
       faraday.params["key"] = ENV['PARKWHIZ_API_KEY']
