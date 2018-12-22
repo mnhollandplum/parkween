@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'welcome', to: 'welcome#index'
 
+
   root to: "welcome#index"
 
   get 'about', to: 'welcome#show'
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   resources :trips, only: [:new, :create, :index, :show]
+  resources :results, only: [:create, :index]
 
 end
