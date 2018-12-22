@@ -25,7 +25,10 @@
    for (i = 0; i < locations.length; i++) {
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-       map: map
+       map: map,
+       draggable: true,
+       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -50,4 +53,5 @@ window.onload = loadScript;
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap">
   </script>
+
   </body>
