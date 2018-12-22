@@ -1,5 +1,5 @@
 <div class= "form-background">
-  <%= form_tag('/trips', controller: "trips", action: "new") do %>
+  <%= form_tag('/results', controller: "results", action: "create") do %>
     <div class="tab">
       Destination<br> <%= text_field_tag 'destination' %>
 
@@ -13,7 +13,7 @@
       <span class="parking-option">
         Meter<br>
         <label class="switch">
-          <%= check_box_tag 'meter', class: 'checkbox' %>
+          <%= check_box_tag 'meter', class: 'meter-checkbox' %>
           <span class="slider"></span>
         </label>
         <br>
@@ -22,7 +22,7 @@
       <span class="parking-option">
         Lot<br>
         <label class="switch">
-          <%= check_box_tag 'lot', class: 'checkbox' %>
+          <%= check_box_tag 'lot', class: 'lot-checkbox' %>
           <span class="slider"></span>
         </label>
       </span>
