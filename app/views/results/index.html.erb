@@ -1,4 +1,19 @@
 
+Results:
+<div class = results>
+  <%#  Remove this afer placing pins %>
+  <% @facade.locations.each do |loc| %>
+    <div class = "result">
+      <li>Name: <%= loc.name %></li>
+      <li>Price: $<%= loc.price %> Per Hour</li>
+      <li>Address: <%= loc.address %></li>
+      <li>Distance: <%= loc.distance %> Feet</li>
+      <li>Lat: <%= loc.lat %></li>
+      <li>Lng: <%= loc.lng %></li>
+      <br>
+    </div>
+  <% end %>
+  </div>
   <body>
     <div id="map"></div>
     <script>
