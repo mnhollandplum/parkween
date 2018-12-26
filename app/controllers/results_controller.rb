@@ -13,6 +13,5 @@ class ResultsController < ApplicationController
   end
 
   def index
-    @facade = ResultsFacade.new(lat, lng, address, radius)
   end
 end
