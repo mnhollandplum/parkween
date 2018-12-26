@@ -36,10 +36,8 @@ Results:
           icon: image
         });
       <% end %>
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-      }
+    };
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap">
