@@ -1,11 +1,9 @@
 class ResultsFacade
-
   def initialize(lat, lng, destination, radius)
     @lat = lat
     @lng = lng
     @destination = destination
     @radius = radius
-
     @_locations
   end
 
