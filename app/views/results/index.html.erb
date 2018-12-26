@@ -1,19 +1,39 @@
 
   <%#  Remove this afer placing pins %>
-  <% unless @facade.locations.empty? %>
-  <div class = results>
-  Results:
-    <% @facade.locations.each do |loc| %>
-      <div class = "result">
-        <li>Name: <%= loc.name %></li>
-        <li>Price: $<%= loc.price %> Per Hour</li>
-        <li>Address: <%= loc.address %></li>
-        <li>Distance: <%= loc.distance %> Feet</li>
-        <li>Lat: <%= loc.lat %></li>
-        <li>Lng: <%= loc.lng %></li>
-        <br>
-      </div>
+
+
+
+  <% unless @facade.lots.empty? && @facade.meters.empty? %>
+    Results:
+    <div class = results>
+
+    <% unless @facade.lots.empty? %>
+      <% @facade.lots.each do |loc| %>
+        <div class = "lot-result">
+          <li>Name: <%= loc.name %></li>
+          <li>Price: $<%= loc.price %> Per Hour</li>
+          <li>Address: <%= loc.address %></li>
+          <li>Distance: <%= loc.distance %> Feet</li>
+          <li>Lat: <%= loc.lat %></li>
+          <li>Lng: <%= loc.lng %></li>
+          <br>
+        </div>
+      <% end %>
     <% end %>
+
+    <% unless @facade.meters.empty? %>
+      <% @facade.meters.each do |loc| %>
+        <div class = "meter-result">
+          <li>Price: $<%= loc.price %> Per Hour</li>
+          <li>Address: <%= loc.address %></li>
+          <li>Distance: <%= loc.distance %> Feet</li>
+          <li>Lat: <%= loc.lat %></li>
+          <li>Lng: <%= loc.lng %></li>
+          <br>
+        </div>
+      <% end %>
+    <% end %>
+
   </div>
   <% else %>
     <div class="no-results">
@@ -21,6 +41,7 @@
       <%= link_to "New Trip", new_trip_path %>
     </div>
   <% end %>
+
   <body>
     <div id="map"></div>
     <script>
@@ -32,7 +53,7 @@
         });
         var destination = {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>};
         var marker = new google.maps.Marker({position: destination, map: map});
-        <% @facade.locations.each do |location| %>
+        <% @facade.lots.each do |location| %>
         var image = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
         var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
         marker = new google.maps.Marker({
