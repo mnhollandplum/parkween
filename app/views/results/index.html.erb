@@ -20,11 +20,11 @@ Results:
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 39.751199899999996, lng:  -105.00201589999999},
+          center: {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>},
           zoom: 16
         });
-        var turing = {lat: 39.751199899999996, lng:  -105.00201589999999};
-        var marker = new google.maps.Marker({position: turing, map: map});
+        var destination = {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>};
+        var marker = new google.maps.Marker({position: destination, map: map});
         <% @facade.locations.each do |location| %>
         var image = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
         var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
