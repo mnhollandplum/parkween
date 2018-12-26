@@ -36,6 +36,9 @@ Results:
           icon: image
         });
       <% end %>
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
       }
     </script>
     <script async defer
