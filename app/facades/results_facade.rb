@@ -9,6 +9,9 @@ class ResultsFacade
 
   def locations
     @_locations ||= lot_builder
+    @_locations.find_all do |lot|
+      lot.distance <= radius_in_feet
+    end
   end
 
   def lot_builder
@@ -23,6 +26,12 @@ class ResultsFacade
       distance = lot[:distance]
       Lot.new(lat,lng,name,address,price, distance)
     end
+  end
+
+  private
+
+  def radius_in_feet
+    @radius.to_f * 5280.0
   end
 
   def service
