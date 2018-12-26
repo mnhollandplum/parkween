@@ -7,8 +7,10 @@ class ResultsController < ApplicationController
     lng = @coordinates[:lng]
     radius = params[:radius]
     address = params[:location]
+    lot = true if params[:lot]
+    meter = true if params[:meter]
 
-    @facade = ResultsFacade.new(lat, lng, address, radius)
+    @facade = ResultsFacade.new(lat, lng, address, radius, lot, meter)
     render :index
   end
 
