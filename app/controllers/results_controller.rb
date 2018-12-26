@@ -2,7 +2,7 @@ class ResultsController < ApplicationController
   def create
     # Assuming params[:destination] is a real address
     @coordinates = GoogleCoordinateService.new.get_coordinates(params[:destination])
-    
+
     lat = @coordinates[:lat]
     lng = @coordinates[:lng]
     radius = params[:radius]
