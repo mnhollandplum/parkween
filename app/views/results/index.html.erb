@@ -25,6 +25,17 @@ Results:
         });
         var turing = {lat: 39.751199899999996, lng:  -105.00201589999999};
         var marker = new google.maps.Marker({position: turing, map: map});
+        <% @facade.locations.each do |location| %>
+        var image = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
+        var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
+        marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: <%= location.name.to_json.html_safe %>,
+          price: <%= location.price.to_json.html_safe%>,
+          icon: image
+        });
+      <% end %>
       }
     </script>
     <script async defer
