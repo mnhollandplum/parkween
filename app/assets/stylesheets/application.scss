@@ -25,6 +25,17 @@ body {
   background-position: 50% 50%;
 }
 
+.result {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+      );
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
 .btn {
   font-size: 130px;
 }

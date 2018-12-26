@@ -5,31 +5,34 @@
 
   <% unless @facade.lots.empty? && @facade.meters.empty? %>
     Results:
-    <div class = results>
+    <div class="results">
 
     <% unless @facade.lots.empty? %>
       <% @facade.lots.each do |loc| %>
-        <div class = "lot-result">
+        <div class="lot-result result">
           <li>Name: <%= loc.name %></li>
           <li>Price: $<%= loc.price %> Per Hour</li>
           <li>Address: <%= loc.address %></li>
           <li>Distance: <%= loc.distance %> Feet</li>
           <li>Lat: <%= loc.lat %></li>
           <li>Lng: <%= loc.lng %></li>
-          <br>
         </div>
       <% end %>
     <% end %>
 
     <% unless @facade.meters.empty? %>
-      <% @facade.meters.each do |loc| %>
-        <div class = "meter-result">
-          <li>Price: $<%= loc.price %> Per Hour</li>
+      <% @facade.meters.each_with_index do |loc, i| %>
+      <% break if i == 10 %>
+        <div class="meter-result result">
+          <% if loc.price %>
+          <li>Price: $<%= loc.price %>0 Per Hour</li>
+          <% else %>
+            Pricing Unavaliable
+          <% end %>
           <li>Address: <%= loc.address %></li>
-          <li>Distance: <%= loc.distance %> Feet</li>
+          <li>Distance: <%= loc.distance %></li>
           <li>Lat: <%= loc.lat %></li>
           <li>Lng: <%= loc.lng %></li>
-          <br>
         </div>
       <% end %>
     <% end %>
