@@ -40,7 +40,7 @@ body {
 }
 
 .label {
-  color: black;
+  color: #7BD9D2;
 }
 
 
@@ -71,15 +71,16 @@ body {
 
 .navbar-brand {
   font-size: 70px;
+  color: white;
+}
+
+.navbar-dark{
+  color: red;
 }
 
 nav {
   background-color: black;
   opacity: 0.7;
-}
-
-.navbar-brand {
-  color: white;
 }
 
 .navbar-brand:hover {
@@ -141,7 +142,7 @@ nav {
 
 input:checked + .slider{
   // Controlls color of swich on new trip form
-  background-color: #2E7CF6;
+  background-color: #2F72A4;
 }
 
 input:checked + .slider:before{
@@ -186,6 +187,11 @@ input#end_location{
   opacity: 0.8;
   position: center;
   border-radius: 10px;
+}
+
+.btn-primary{
+  background-color: #2F72A4;
+  color: white;
 }
 
 #map {
