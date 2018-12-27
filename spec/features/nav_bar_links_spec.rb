@@ -7,8 +7,6 @@ describe 'Nav Bar' do
 
       click_on 'About'
       expect(current_path).to eq('/about')
-      click_on 'ParKween'
-      expect(current_path).to eq('/')
     end
 
     it 'does not show links for logged in users' do
@@ -30,8 +28,7 @@ describe 'Nav Bar' do
       click_on 'About'
       expect(current_path).to eq('/about')
 
-      click_on 'ParKween'
-      expect(current_path).to eq('/')
+      visit '/'
 
       click_on 'New Trip'
       expect(current_path).to eq('/trips/new')
