@@ -28,11 +28,18 @@ body {
 .result {
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
       );
-  border-radius: 10px;
-  margin-top: 10px;
+  border-radius: 50px;
+  margin-top: 50px;
+  font-size: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.label {
+  color: black;
 }
 
 
@@ -42,7 +49,6 @@ body {
 
 .welcome {
   font-size: 150px;
-
 }
 
 .slogan {

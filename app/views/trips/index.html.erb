@@ -1,0 +1,10 @@
+<div class="slogan hello">My Trip Histroy</div>
+
+  <% current_user.trips.each do |trip| %>
+  <div class="result">
+    <div class="label">Destination:</div><li><%= trip.final_address %></li>
+
+    <div class="label">Chosen Spot:</div><li><%= trip.chosen_spot%></li>
+    <div class="label">Date:</div><li><%= trip.created_at.strftime("%b %d, %Y") %></li>
+  </div>
+  <% end %>
