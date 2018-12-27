@@ -16,13 +16,14 @@
 
 body {
   height: 100vh;
-  background-image: asset_url('Denver.jpg');
+  background-image: url('Denver.jpg');
   background-repeat: no-repeat;
   color: white;
   background-color: black;
   text-align: center;
   background-size: cover;
   background-position: 50% 50%;
+  font-family: "Lucida Sans Unicode";
 }
 
 .result {
