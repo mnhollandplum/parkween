@@ -11,7 +11,6 @@
         });
         var destination = {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>};
         var marker = new google.maps.Marker({position: destination, map: map});
-        var info_window = new google.maps.InfoWindow({content: ''});
         <% @facade.lots.each do |location| %>
         var image = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
         var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
