@@ -21,14 +21,16 @@
           title: <%= location.name.to_json.html_safe %>,
           price: <%= location.price.to_json.html_safe%>,
           icon: image,
+          optimized: false
         });
-        google.maps.event.addListener(marker, 'click', function() {
-            info_window.content = <%= location.name.to_json.html_safe %>;
-              info_window.open(map, marker);
-          });
+        google.maps.event.addListener(marker , 'click', function(){
+     var infowindow = new google.maps.InfoWindow({
+       content: <%= location.name.to_json.html_safe %>,
+       position: position,
+     });
+     infowindow.open(map);
+ });
       <% end %>
-      return marker;
-
     };
 
     </script>
