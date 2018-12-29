@@ -25,7 +25,7 @@
         });
         google.maps.event.addListener(marker , 'click', function(){
           var infowindow = new google.maps.InfoWindow({
-            content: <%= location.name.to_json.html_safe %> "<%= location.price.to_json.html_safe.to_s%>",
+            content: <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars",
           });
           infowindow.open(map,this);
         });
