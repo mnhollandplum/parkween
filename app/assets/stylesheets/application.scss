@@ -18,7 +18,7 @@ body {
   height: 100vh;
   background-image: url('Denver.jpg');
   background-repeat: no-repeat;
-  color: blue;
+  color: white;
   background-color: black;
   text-align: center;
   background-size: cover;
@@ -195,5 +195,6 @@ input#end_location{
 }
 
 #map {
+  color: black;
   height: 50%;
 }
