@@ -24,13 +24,14 @@
           optimized: false
         });
         google.maps.event.addListener(marker , 'click', function(){
-     var infowindow = new google.maps.InfoWindow({
-       content: <%= location.name.to_json.html_safe %>,
-       position: position,
-     });
-     infowindow.open(map);
- });
+          var infowindow = new google.maps.InfoWindow({
+            content: <%= location.name.to_json.html_safe %> "<%= location.price.to_json.html_safe.to_s%>",
+          });
+          infowindow.open(map,this);
+        });
       <% end %>
+      return marker;
+
     };
 
     </script>
