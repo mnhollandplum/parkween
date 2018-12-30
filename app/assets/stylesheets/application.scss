@@ -198,3 +198,11 @@ input#end_location{
   color: black;
   height: 50%;
 }
+#parking-section-b, #parking-section-c {
+  display: none;
+  transition: 2s;
+}
+.next-button {
+  display: block;
+  color: white;
+}
