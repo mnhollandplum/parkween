@@ -72,6 +72,12 @@ class ResultsFacade
     end/found_meters.count
   end
 
+  def avg_lot_price
+    lots.sum do |lot|
+      lot.price
+  end/lots.count
+  end
+
   private
 
   def sorted_meters

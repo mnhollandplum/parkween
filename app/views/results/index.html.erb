@@ -44,6 +44,14 @@
       Meters In Search Radius: <%= @facade.meter_count %><br>
       Average Meter Price: $<%= @facade.avg_meter_price.round(2) %>
     <% end %>
+    <br />
+    <br />
+    <% unless @facade.lots.empty? %>
+      Lots In Search Radius: <%= @facade.lots.count %><br>
+      Average Lot Price: $<%= @facade.avg_lot_price.round(2) %>
+    <% end %>
+
+
   </div>
 
   <% unless @facade.lots.empty? && @facade.meters.empty? %>
