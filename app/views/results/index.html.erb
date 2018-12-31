@@ -12,23 +12,24 @@
         var destination = {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>};
         var marker = new google.maps.Marker({position: destination, map: map});
         <% @facade.lots.each do |location| %>
-        var image = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
-        var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
-        var marker = new google.maps.Marker({
-          position: position,
-          map: map,
-          title: <%= location.name.to_json.html_safe %>,
-          price: <%= location.price.to_json.html_safe%>,
-          icon: image,
-          optimized: false
-        });
-        google.maps.event.addListener(marker , 'click', function(){
-          var infowindow = new google.maps.InfoWindow({
-              content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + "</div>",
+          var image = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
+          var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
+          var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: <%= location.name.to_json.html_safe %>,
+            price: <%= location.price.to_json.html_safe%>,
+            icon: image,
+            optimized: false
           });
-          infowindow.open(map,this);
-        });
-      <% end %>
+          google.maps.event.addListener(marker , 'click', function(){
+            var form = "<%=j button_to 'Select', trips_path, params: {location: location.address, destination_address: @facade.destination} %>"
+            var infowindow = new google.maps.InfoWindow({
+                content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + form + "</div>",
+            });
+            infowindow.open(map,this);
+          });
+        <% end %>
       return marker;
 
     };
@@ -43,9 +44,8 @@
     <% unless @facade.meters.empty? %>
       Meters In Search Radius: <%= @facade.meter_count %><br>
       Average Meter Price: $<%= @facade.avg_meter_price.round(2) %>
+      <br />
     <% end %>
-    <br />
-    <br />
     <% unless @facade.lots.empty? %>
       Lots In Search Radius: <%= @facade.lots.count %><br>
       Average Lot Price: $<%= @facade.avg_lot_price.round(2) %>
