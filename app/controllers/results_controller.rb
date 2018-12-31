@@ -6,7 +6,7 @@ class ResultsController < ApplicationController
     lat = @coordinates[:lat]
     lng = @coordinates[:lng]
     radius = params[:radius]
-    address = params[:location]
+    address = params[:destination]
     lot = true if params[:lot]
     meter = true if params[:meter]
 
