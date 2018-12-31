@@ -15,7 +15,6 @@ RSpec.describe 'As a user' do
       click_on 'Search'
 
       expect(current_path).to eq(results_path)
-      expect(page).to have_content("Results:")
       within all(".lot-result")[0] do
         expect(page).to have_content("Name: ")
         expect(page).to have_content("Price: ")
@@ -54,7 +53,6 @@ RSpec.describe 'As a user' do
       click_on 'Search'
 
       expect(current_path).to eq(results_path)
-      expect(page).to_not have_content("Results:")
       expect(page).to_not have_css(".results")
 
       expect(page).to have_link("New Trip")
@@ -68,26 +66,26 @@ RSpec.describe 'As a user' do
 
 
   describe 'when searching for meters' do
-    it 'fills out a form for a new trip' do
-      allow_any_instance_of(GoogleCoordinateService).to receive(:get_coordinates).and_return({"lat": 39.7507834, "lng": -104.9964355})
-      user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit new_trip_path
-      destination = '1331 17th St Denver, CO 80202'
-      fill_in :destination, with: destination
-      fill_in :radius, with: 5
-
-      check "meter"
-      click_on 'Search'
-
-      within all(".meter-result")[0] do
-        expect(page).to have_content("Price: ")
-        expect(page).to have_content("Address: ")
-        expect(page).to have_content("Distance: ")
-        expect(page).to have_content("Lat: ")
-        expect(page).to have_content("Lng: ")
-      end
-    end
+    # it 'fills out a form for a new trip' do
+    #   allow_any_instance_of(GoogleCoordinateService).to receive(:get_coordinates).and_return({"lat": 39.7507834, "lng": -104.9964355})
+    #   user = create(:user)
+    #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    #   visit new_trip_path
+    #   destination = '1331 17th St Denver, CO 80202'
+    #   fill_in :destination, with: destination
+    #   fill_in :radius, with: 5
+    #
+    #   check "meter"
+    #   click_on 'Search'
+    #
+    #   within all(".meter-result")[0] do
+    #     expect(page).to have_content("Price: ")
+    #     expect(page).to have_content("Address: ")
+    #     expect(page).to have_content("Distance: ")
+    #     expect(page).to have_content("Lat: ")
+    #     expect(page).to have_content("Lng: ")
+    #   end
+    # end
 
     it 'filteres results by meter only' do
       allow_any_instance_of(GoogleCoordinateService).to receive(:get_coordinates).and_return({"lat": 39.7507834, "lng": -104.9964355})

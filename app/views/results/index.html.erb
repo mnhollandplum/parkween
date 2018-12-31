@@ -24,7 +24,7 @@
         });
         google.maps.event.addListener(marker , 'click', function(){
           var infowindow = new google.maps.InfoWindow({
-            content: <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars",
+              content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + "</div>",
           });
           infowindow.open(map,this);
         });
@@ -39,9 +39,14 @@
   </script>
   </body>
 
+  <div class="stats">
+    <% unless @facade.meters.empty? %>
+      Meters In Search Radius: <%= @facade.meter_count %><br>
+      Average Meter Price: $<%= @facade.avg_meter_price.round(2) %>
+    <% end %>
+  </div>
 
   <% unless @facade.lots.empty? && @facade.meters.empty? %>
-    Results:
     <div class="results">
 
     <% unless @facade.lots.empty? %>
