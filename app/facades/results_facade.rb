@@ -57,6 +57,21 @@ class ResultsFacade
     end
   end
 
+  def meter_count
+    sorted_meters.find_all do |meter|
+      meter.distance <= @radius.to_f
+    end.count
+  end
+
+  def avg_meter_price
+    found_meters = sorted_meters.find_all do |meter|
+      meter.price != nil
+    end
+    found_meters.sum do |meter|
+      meter.price
+    end/found_meters.count
+  end
+
   private
 
   def sorted_meters
