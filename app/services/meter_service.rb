@@ -7,7 +7,7 @@ class MeterService
       search_lat = meter["LATITUDE"].to_f
       search_lng = meter["LONGITUDE"].to_f
       meter["DISTANCE"] = Geocoder::Calculations.distance_between([lat,lng],[search_lat, search_lng])
-      radius.to_f <= meter["DISTANCE"]
+      radius.to_f >= meter["DISTANCE"]
     end
   end
 end
