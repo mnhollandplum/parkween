@@ -29,9 +29,12 @@
           google.maps.event.addListener(marker , 'click', function(){
             var form = "<%=j button_to 'Select', trips_path, params: {location: location.address, destination_address: @facade.destination} %>"
             var infowindow = new google.maps.InfoWindow({
-                content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + form + "</div>",
+              content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + form + "</div>",
             });
             infowindow.open(map,this);
+            google.maps.event.addListener(map, "click", function(event) {
+              infowindow.close();
+            });
           });
         <% end %>
       return marker;
