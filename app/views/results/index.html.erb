@@ -40,55 +40,27 @@
   </script>
   </body>
 
+  <% unless @facade.meters.empty? %>
+    <div class="meter-select">
+      <%= button_to "Choose Meter", trips_path, params: {location: "Meter", destination_address: @facade.destination}, class: "submit-btn btn btn-primary btn-lg btn-block mx-auto", style: "width: 760px"   %>
+    </div>
+  <% end %>
+
   <div class="stats">
     <% unless @facade.meters.empty? %>
       Meters In Search Radius: <%= @facade.meter_count %><br>
-      Average Meter Price: $<%= @facade.avg_meter_price.round(2) %>
+      Average Meter Price: <%= number_to_currency(@facade.avg_meter_price) %>
       <br />
     <% end %>
     <% unless @facade.lots.empty? %>
       Lots In Search Radius: <%= @facade.lots.count %><br>
-      Average Lot Price: $<%= @facade.avg_lot_price.round(2) %>
+      Average Lot Price: <%= number_to_currency(@facade.avg_lot_price) %>
     <% end %>
 
 
   </div>
 
-  <% unless @facade.lots.empty? && @facade.meters.empty? %>
-    <div class="results">
-
-    <% unless @facade.lots.empty? %>
-      <% @facade.lots.each do |loc| %>
-        <div class="lot-result result">
-          <li>Name: <%= loc.name %></li>
-          <li>Price: $<%= loc.price %> Per Hour</li>
-          <li>Address: <%= loc.address %></li>
-          <li>Distance: <%= loc.distance %> Feet</li>
-          <li>Lat: <%= loc.lat %></li>
-          <li>Lng: <%= loc.lng %></li>
-        </div>
-      <% end %>
-    <% end %>
-
-    <% unless @facade.meters.empty? %>
-      <% @facade.meters.each_with_index do |loc, i| %>
-      <% break if i == 10 %>
-        <div class="meter-result result">
-          <% if loc.price %>
-          <li>Price: $<%= loc.price %>0 Per Hour</li>
-          <% else %>
-            Pricing Unavaliable
-          <% end %>
-          <li>Address: <%= loc.address %></li>
-          <li>Distance: <%= loc.distance %></li>
-          <li>Lat: <%= loc.lat %></li>
-          <li>Lng: <%= loc.lng %></li>
-        </div>
-      <% end %>
-    <% end %>
-
-  </div>
-  <% else %>
+  <% if @facade.lots.empty? && @facade.meters.empty? %>
     <div class="no-results">
       Sorry, No Results Found
       <%= link_to "New Trip", new_trip_path %>
