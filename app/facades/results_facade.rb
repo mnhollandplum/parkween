@@ -1,5 +1,7 @@
 class ResultsFacade
 
+  attr_reader :destination
+
   def initialize(lat, lng, destination, radius, lots, meters)
     @lat = lat
     @lng = lng
@@ -14,23 +16,44 @@ class ResultsFacade
   def lots
     if @lots_valid
       @_lots ||= lot_builder
-      result = @_lots.find_all do |lot|
+      return @_lots.find_all do |lot|
         lot.distance <= radius_in_feet
       end
     else
-      result = []
+      return []
     end
-    result
   end
 
   def meters
     if @meters_valid
-      result = sorted_meters
+      return sorted_meters
     else
-      result =  []
+      return []
     end
-    result
   end
+
+  def meter_count
+    sorted_meters.find_all do |meter|
+      meter.distance <= @radius.to_f
+    end.count
+  end
+
+  def avg_meter_price
+    found_meters = sorted_meters.find_all do |meter|
+      meter.price != nil
+    end
+    found_meters.sum do |meter|
+      meter.price
+    end/found_meters.count
+  end
+
+  def avg_lot_price
+    lots.sum do |lot|
+      lot.price
+    end/lots.count
+  end
+
+  private
 
   def meter_builder
     @_meters = meter_service.get_results(@lat, @lng, @radius).map do |meter|
@@ -57,36 +80,11 @@ class ResultsFacade
     end
   end
 
-  def meter_count
-    sorted_meters.find_all do |meter|
-      meter.distance <= @radius.to_f
-    end.count
-  end
-
-  def avg_meter_price
-    found_meters = sorted_meters.find_all do |meter|
-      meter.price != nil
-    end
-    found_meters.sum do |meter|
-      meter.price
-    end/found_meters.count
-  end
-
-  def avg_lot_price
-    lots.sum do |lot|
-      lot.price
-  end/lots.count
-  end
-
-  private
-
   def sorted_meters
-
     @_meters ||= meter_builder
     result =  @_meters.find_all do |meter|
       meter.distance <= radius_in_feet
     end
-
     result.sort_by do |meter|
       meter.distance
     end
