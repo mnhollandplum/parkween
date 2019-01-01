@@ -301,6 +301,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
+  coffee-script (~> 2.4.1)
   factory_bot_rails
   faker
   faraday
