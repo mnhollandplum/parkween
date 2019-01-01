@@ -31,3 +31,5 @@
 
 .rspec
 /coverage
+
+/Gemfile.lock
