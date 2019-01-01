@@ -2,12 +2,12 @@
   <%= form_tag('/results', controller: "results", action: "create") do %>
     <div class="tab">
       <div id="parking-section-a">
-        Destination<br> <div class="search-feild"><%= text_field_tag 'destination' %></div>
-        <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-a-button">Next</button>
+        Destination<br> <%= text_field_tag 'destination' %>
+        <button class="next-button" id="parking-section-a-button">Next</button>
       </div>
       <div id="parking-section-b">
-        Radius<br> <div class="search-feild"><%= text_field_tag 'radius' %></div>
-        <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-b-button">Next</button>
+        Radius<br> <%= text_field_tag 'radius' %>
+        <button class="next-button" id="parking-section-b-button">Next</button>
       </div>
       <div id="parking-section-c">
         <div class=form-item>

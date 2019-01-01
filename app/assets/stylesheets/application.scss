@@ -189,7 +189,6 @@ input#end_location{
   opacity: 0.8;
   position: center;
   border-radius: 10px;
-  width: 760px;
 }
 
 .btn-primary{
@@ -205,7 +204,14 @@ input#end_location{
   display: none;
   transition: 2s;
 }
-
+.next-button {
+  display: block;
+  color: white;
+  background: #2F72A4;
+  opacity: 0.8;
+  border-radius: 10px;
+  float: right;
+}
 
 .map-box {
   font-size: 50px;
@@ -217,8 +223,4 @@ input#end_location{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 50px;
-}
-
-.search-feild {
-  padding-bottom: 30px;
 }

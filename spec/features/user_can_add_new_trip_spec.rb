@@ -87,7 +87,7 @@ RSpec.describe 'As a user' do
     #   end
     # end
 
-    it 'filters results by meter only' do
+    it 'filteres results by meter only' do
       allow_any_instance_of(GoogleCoordinateService).to receive(:get_coordinates).and_return({"lat": 39.7507834, "lng": -104.9964355})
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
