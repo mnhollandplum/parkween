@@ -18,6 +18,7 @@
           });
           var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
           var marker = new google.maps.Marker({
+            animation: google.maps.Animation.BOUNCE,
             position: position,
             map: map,
             title: <%= location.name.to_json.html_safe %>,
