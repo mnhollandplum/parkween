@@ -38,6 +38,8 @@ gem 'omniauth-google-oauth2'
 gem 'geocoder'
 gem 'newrelic_rpm'
 gem "rspec-rails"
+gem 'figaro'
+
 
 
 
@@ -46,7 +48,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'simplecov'
   gem 'pry'
-  gem 'figaro'
   gem 'faraday'
   gem 'launchy'
   gem 'shoulda-matchers'
