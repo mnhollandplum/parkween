@@ -12,7 +12,10 @@
         var destination = {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>};
         var marker = new google.maps.Marker({position: destination, map: map});
         <% @facade.lots.each do |location| %>
-          var image = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
+          var image = ({
+            url: "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png",
+            scaledSize: new google.maps.Size(78, 78)
+          });
           var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
           var marker = new google.maps.Marker({
             position: position,
