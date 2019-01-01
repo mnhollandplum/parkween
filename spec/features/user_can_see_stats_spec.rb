@@ -28,8 +28,8 @@ describe 'Results page shows stats' do
       check "lot"
       click_on 'Search'
 
-      expect(page).to have_content("Lots In Search Radius: 24")
-      expect(page).to have_content("Average Lot Price: $11.73")
+      expect(page).to have_content("Lots In Search Radius: 21")
+      expect(page).to have_content("Average Lot Price: $14.07")
     end
   end
 end
