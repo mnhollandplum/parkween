@@ -12,9 +12,13 @@
         var destination = {lat: <%= @coordinates[:lat] %>, lng: <%= @coordinates[:lng] %>};
         var marker = new google.maps.Marker({position: destination, map: map});
         <% @facade.lots.each do |location| %>
-          var image = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
+          var image = ({
+            url: "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png",
+            scaledSize: new google.maps.Size(78, 78)
+          });
           var position = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
           var marker = new google.maps.Marker({
+            animation: google.maps.Animation.BOUNCE,
             position: position,
             map: map,
             title: <%= location.name.to_json.html_safe %>,
@@ -25,9 +29,12 @@
           google.maps.event.addListener(marker , 'click', function(){
             var form = "<%=j button_to 'Select', trips_path, params: {location: location.address, destination_address: @facade.destination} %>"
             var infowindow = new google.maps.InfoWindow({
-                content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + form + "</div>",
+              content: "<div class=map-box>" + <%= location.name.to_json.html_safe %> + "<br />"+"<%= location.price.to_json.html_safe.to_s%> dollars" + form + "</div>",
             });
             infowindow.open(map,this);
+            google.maps.event.addListener(map, "click", function(event) {
+              infowindow.close();
+            });
           });
         <% end %>
       return marker;
