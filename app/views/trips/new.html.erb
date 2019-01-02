@@ -3,8 +3,9 @@
     <%= form_tag('/results', controller: "results", action: "create") do %>
       <div class="tab">
         <div id="parking-section-a">
-          Destination<br> <div class="search-feild"><%= text_field_tag 'destination' %></div>
-          <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-a-button">Next</button>
+         Downtown Denver<br> Destination<br> <div class="search-feild place"><%= text_field_tag 'destination'%></div>
+        <p>Enter the address or Denver landmark, city, state and zipcode </p>
+        <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-a-button">Next</button>
         </div>
         <div id="parking-section-b">
           Radius<br> <div class="search-feild"><%= text_field_tag 'radius' %></div>
@@ -13,7 +14,6 @@
         <div id="parking-section-c">
           <div class=form-item>
           Parking Type<br>
-
           <span class="parking-option">
             Meter<br>
             <label class="switch">
