@@ -1,5 +1,4 @@
 class Meter
-
   attr_reader :lat,
               :lng,
               :address,
@@ -13,5 +12,4 @@ class Meter
     @price = price
     @distance = distance
   end
-
 end
