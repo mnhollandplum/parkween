@@ -49,7 +49,10 @@ To run the full testing suite, run `rspec` from the command line.
 
 ### Contributors
 [Maria Torres](https://github.com/tmaria17)
+
 [Nick Lindeberg](https://github.com/NickLindeberg)
+
 [Nikki Holland-Plum](https://github.com/mnhollandplum)
+
 [Preston Jarnagin](https://github.com/prestonjarnagin)
 
