@@ -2,7 +2,8 @@
   <%= form_tag('/results', controller: "results", action: "create") do %>
     <div class="tab">
       <div id="parking-section-a">
-        Destination<br> <div class="search-feild"><%= text_field_tag 'destination' %></div>
+        Downtown Denver<br> Destination<br> <div class="search-feild place"><%= text_field_tag 'destination'%></div>
+        <p> Please enter the address, city, state and zipcode </p>
         <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-a-button">Next</button>
       </div>
       <div id="parking-section-b">
