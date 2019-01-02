@@ -1,5 +1,4 @@
 class ResultsFacade
-
   attr_reader :destination
 
   def initialize(lat, lng, destination, radius, lots, meters)
@@ -110,5 +109,4 @@ class ResultsFacade
       nil
     end
   end
-
 end
