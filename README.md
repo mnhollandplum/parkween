@@ -3,6 +3,8 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/mnhollandplum/parkween.svg?columns=all)](https://waffle.io/mnhollandplum/parkween)
 [![Build Status](https://travis-ci.org/mnhollandplum/parkween.svg?branch=master)](https://travis-ci.org/mnhollandplum/parkween)
 
+![](https://media.giphy.com/media/9xcmmwwybSYfOS5YzG/giphy.gif)
+
 ### Problem
 
 Denver is becoming more populated, parking prices are rising and spots are an endangered species.  
@@ -21,7 +23,7 @@ Parkween gives commuters access to affordable parking solutions within a chosen 
 * Google Oauth
 
 ### Prerequisites/ Dependencies
- This project assumes you have installed: 
+ This project assumes you have installed:
  * Ruby 2.4.1
  * Rails 5.2.2
  * omniauth-google-oauth2'
@@ -57,4 +59,3 @@ To run the full testing suite, run `rspec` from the command line.
 [Nikki Holland-Plum](https://github.com/mnhollandplum)
 
 [Preston Jarnagin](https://github.com/prestonjarnagin)
-
