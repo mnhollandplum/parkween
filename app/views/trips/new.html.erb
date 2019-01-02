@@ -1,36 +1,41 @@
-<div class= "form-background" id="parking-form">
-  <%= form_tag('/results', controller: "results", action: "create") do %>
-    <div class="tab">
-      <div id="parking-section-a">
-        Destination<br> <div class="search-feild"><%= text_field_tag 'destination' %></div>
-        <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-a-button">Next</button>
-      </div>
-      <div id="parking-section-b">
-        Radius<br> <div class="search-feild"><%= text_field_tag 'radius' %></div>
-        <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-b-button">Next</button>
-      </div>
-      <div id="parking-section-c">
-        <div class=form-item>
-        Parking Type<br>
-
-        <span class="parking-option">
-          Meter<br>
-          <label class="switch">
-            <%= check_box_tag 'meter', class: 'meter-checkbox' %>
-            <span class="slider"></span>
-          </label>
-          <br>
-        </span>
-
-        <span class="parking-option">
-          Lot<br>
-          <label class="switch">
-            <%= check_box_tag 'lot', class: 'lot-checkbox' %>
-            <span class="slider"></span>
-          </label>
-        </span>
+<% if current_user %>
+  <div class= "form-background" id="parking-form">
+    <%= form_tag('/results', controller: "results", action: "create") do %>
+      <div class="tab">
+        <div id="parking-section-a">
+          Destination<br> <div class="search-feild"><%= text_field_tag 'destination' %></div>
+          <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-a-button">Next</button>
         </div>
-        <%= submit_tag "Search", class: "submit-btn btn btn-primary btn-lg btn-block mx-auto", style: "width: 760px" %>
-      </div>
-  <% end %>
-</div>
+        <div id="parking-section-b">
+          Radius<br> <div class="search-feild"><%= text_field_tag 'radius' %></div>
+          <button class="submit-btn btn btn-primary btn-lg btn-block mx-auto" id="parking-section-b-button">Next</button>
+        </div>
+        <div id="parking-section-c">
+          <div class=form-item>
+          Parking Type<br>
+
+          <span class="parking-option">
+            Meter<br>
+            <label class="switch">
+              <%= check_box_tag 'meter', class: 'meter-checkbox' %>
+              <span class="slider"></span>
+            </label>
+            <br>
+          </span>
+
+          <span class="parking-option">
+            Lot<br>
+            <label class="switch">
+              <%= check_box_tag 'lot', class: 'lot-checkbox' %>
+              <span class="slider"></span>
+            </label>
+          </span>
+          </div>
+          <%= submit_tag "Search", class: "submit-btn btn btn-primary btn-lg btn-block mx-auto", style: "width: 760px" %>
+        </div>
+    <% end %>
+  </div>
+
+<% else %>
+  <a class="btn btn-primary btn-lg btn-block" id="root-login-btn" href="/login" role="button">Login</a>
+<% end %>
