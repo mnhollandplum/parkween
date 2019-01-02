@@ -21,6 +21,6 @@ Gives commuters access to affordable parking solutions within a chosen radius.  
 
 ### Integrations
 
-* Which APIs will you use? Googlemaps, CoordCurb, Spothero…(MAYBE RTD, BOSS MODE)
+* Which APIs will you use? Googlemaps, Parkwhiz
 
 * Which OAuth integration are you planning to use? Google
