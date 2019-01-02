@@ -1,4 +1,5 @@
 class Lot
+
   attr_reader :lat,
               :lng,
               :name,
@@ -14,4 +15,5 @@ class Lot
     @price = price
     @distance = distance
   end
+  
 end
