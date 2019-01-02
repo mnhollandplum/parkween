@@ -110,5 +110,5 @@ class ResultsFacade
       nil
     end
   end
-
+  
 end

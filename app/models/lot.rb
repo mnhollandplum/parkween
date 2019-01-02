@@ -15,5 +15,5 @@ class Lot
     @price = price
     @distance = distance
   end
-
+  
 end

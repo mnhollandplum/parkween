@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-
+  
   def index
 
   end
@@ -9,7 +9,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def create
