@@ -16,7 +16,9 @@ PARKWEEN is the group project for Module 3 of Turing's Back-End Engineering prog
 Parkween gives commuters access to affordable parking solutions within a chosen radius.  Encourages more adventures in your daily commute. Parkween's target audience is 9-5 Auto commuters in downtown Denver
 
 ### Integrations
-Parkween uses the Googlemaps and Parkwhiz APIs and Google Oauth.
+* Googlemaps API
+* Parkwhiz API
+* Google Oauth
 
 ### Prerequisites/ Dependencies
  This project assumes you have installed: 
