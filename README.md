@@ -1,4 +1,4 @@
-### ParKween
+## ParKween
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/mnhollandplum/parkween.svg?columns=all)](https://waffle.io/mnhollandplum/parkween)
 [![Build Status](https://travis-ci.org/mnhollandplum/parkween.svg?branch=master)](https://travis-ci.org/mnhollandplum/parkween)
@@ -18,7 +18,7 @@ Parkween gives commuters access to affordable parking solutions within a chosen 
 ### Integrations
 Parkween uses the Googlemaps and Parkwhiz APIs and Google Oauth.
 
-## Prerequisites/ Dependencies
+### Prerequisites/ Dependencies
  This project assumes you have installed: 
  * Ruby 2.4.1
  * Rails 5.2.2
@@ -27,7 +27,7 @@ Parkween uses the Googlemaps and Parkwhiz APIs and Google Oauth.
  * rspec-rails
  * figaro
 
-## Installing
+### Installing
 
 1. Clone down the repo:
 
@@ -43,11 +43,11 @@ Parkween uses the Googlemaps and Parkwhiz APIs and Google Oauth.
 
  `rake db:setup`
 
-## Running the tests
+### Running the tests
 To run the full testing suite, run `rspec` from the command line.
 
 
-## Contributors
+### Contributors
 [Maria Torres](https://github.com/tmaria17)
 [Nick Lindeberg](https://github.com/NickLindeberg)
 [Nikki Holland-Plum](https://github.com/mnhollandplum)
