@@ -2,6 +2,8 @@ class TripsController < ApplicationController
   
   def index
 
+      @trip_count = Trip.count
+      @updated_at = Trip.maximum(:updated_at)
   end
 
   def show
